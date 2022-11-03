@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+
+    <div class="game_container">
+        <div class="title_score_container">
+            <div class="title_container">
+                <img src="IMG/logo.svg" alt="Rock Paper Scissors" class="logo" >
+            </div>
+
+            <div class="score_container">
+                <p>score</p>
+                <p id="score">-</p>
+            </div>
+        </div>
+
+        <div class="rps_container" id="rps_display">
+            <div class="rock circle" id="rock">
+                <img src="IMG/icon-rock.svg" alt="Rock icon">
+            </div>
+            <div class="paper circle" id="paper">
+                <img src="IMG/icon-paper.svg" alt="Paper icon">
+            </div>
+            <div class="scissors circle" id="scissors">
+                <img src="IMG/icon-scissors.svg" alt="Scissors icon">
+            </div>
+        </div>
+
+        <div class="rps_duel_container" id="duel_display">
+            <div class="player_pick">
+                <p>Yoy picked</p>
+            </div>
+            <div class="house_pick">
+                <p>House Picked</p>
+            </div>
+            <div class="player_choice" id="player_choise"></div>
+            <div class="who_won" id="winner"></div>
+            <div class="btn_container try_btn" id="try_again">
+                <p>Try Again</p>
+            </div>
+            <div class="pc_choice" id="pc"></div>
+        </div>
+
+        <div class="btn_container" id="rules">
+            <p>rules</p>
+        </div>
+
+        <div class="modal rules" id="modal">
+            <p id="counter">3</p>
+            <img src="IMG/image-rules.svg" alt="Rules" id="rules_img">
+            <span id="exit_rules">Click to continue</span>
+            
+        </div>
+
+        
+
+        
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
+
