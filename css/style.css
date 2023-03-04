@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.clickObject {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.player-tag {
+  margin-top: 2em;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+
+body {
+  margin: 0 auto;
+  height: 100svh;
+  width: 100%;
+  max-width: 700px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.5fr 4fr 0.5fr;
+  padding: 2em;
+  background: linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  background-repeat: no-repeat;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  width: 100%;
+  max-width: 700px;
+  border: 2px solid hsl(217, 16%, 45%);
+  border-radius: 15px;
+  padding: 2em;
+  display: flex;
+  gap: 0.5em;
+  justify-content: space-between;
+  align-items: center;
+}
+header img {
+  max-width: 50%;
+  height: 100%;
+}
+header .score-container {
+  background: hsl(0, 0%, 100%);
+  border-radius: 15px;
+  padding: 1em 2em;
+  color: hsl(229, 64%, 46%);
+  text-align: center;
+  letter-spacing: 2px;
+}
+header .score-container span {
+  color: hsl(229, 25%, 31%);
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.step1 {
+  align-self: center;
+  justify-self: center;
+  background: url(../images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 5em 8em;
+  grid-template-areas: "paper scissor" "rock rock";
+}
+
+.step2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.step2 .fight-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5em;
+}
+
+.rock {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, hsl(349, 83%, 56%), hsl(349, 62%, 49%));
+  grid-area: rock;
+  justify-self: center;
+  box-shadow: inset 0px -7px 0px -1px hsl(347, 75%, 35%);
+  position: relative;
+}
+.rock:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 30px 9px #FFFFFF;
+}
+
+.paper {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, hsl(230, 82%, 63%), hsl(230, 91%, 58%));
+  grid-area: paper;
+  box-shadow: inset 0px -7px 0px -1px hsl(229, 64%, 46%);
+  position: relative;
+}
+.paper:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 30px 9px #FFFFFF;
+}
+
+.scissors {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, hsl(39, 88%, 55%), hsl(40, 83%, 50%));
+  grid-area: scissor;
+  box-shadow: inset 0px -7px 0px -1px hsl(28, 76%, 44%);
+  position: relative;
+}
+.scissors:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 30px 9px #FFFFFF;
+}
+
+.img-container {
+  background: hsl(0, 0%, 100%);
+  position: relative;
+  padding: 2em;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: inset 0px 5px 0px 0.5px #BABFD4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+.img-container img {
+  width: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+footer {
+  justify-self: center;
+}
+footer .rules-btn {
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 15px;
+  padding: 1em 3em;
+  color: hsl(0, 0%, 100%);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+footer .rules-btn:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */

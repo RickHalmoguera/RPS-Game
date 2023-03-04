@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>RPS Game</title>
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <img src="./images/logo.svg" alt="logo">
+        <div class="score-container">
+            <p>SCORE</p>
+            <span class="score-text" id="score">11</span>
+        </div>
+    </header>
+
+    <main id="main" class="step1"> 
+        <div class="paper" >
+            <div class="clickObject" id=paper></div>
+            <div class="img-container">
+                <img src="./images/icon-paper.svg" alt="paper">
+            </div>
+        </div>
+
+        <div class="scissors" >
+            <div class="clickObject" id="scissors" ></div>
+            <div class="img-container">
+                <img src="./images/icon-scissors.svg" alt="scissors">
+            </div>
+        </div>
+
+        <div class="rock" >
+            <div class="clickObject" id="rock"></div>
+            <div class="img-container">
+                <img src="./images/icon-rock.svg" alt="rock">
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="rules-btn">
+            <span>rules</span>
+        </div>
+    </footer>
+</body>
+<script src="./index.js"></script>
+</html>
