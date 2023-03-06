@@ -1,45 +1,104 @@
-const main = document.getElementById("main")
+const step1 = document.getElementById("step1")
+const step2 = document.getElementById("step2")
+const playerChoiceBtn = document.getElementById("playerChoice")
+const houseChoiceBtn = document.getElementById("houseChoice")
+const playerBtnImg = document.getElementById("playerBtnImg")
+const houseBtnImg = document.getElementById("houseBtnImg")
+const winnerDisplay = document.getElementById("winnerDisplay")
+const scoreDisplay = document.getElementById("score")
+const restartBtn = document.getElementById("restartBtn")
+const closeBtn = document.getElementById("closeBtn")
+const rulesBtn = document.getElementById("rulesBtn")
+const modal = document.getElementById("modal")
 
+let playerChoice
+let houseChoice
+let isPlayerWinner =false
+let isADraw = false
+let score = 0
 
+const restartGame = ()=>{
+    playerChoice
+    houseChoice
+    isPlayerWinner =false
+    isADraw = false
 
-const checkWinner =(houseChoice, playerChoice)=>{
-    if(playerChoice)
-
+    step1.classList.remove("hidden")
+    step2.classList.add("hidden")
+    playerChoiceBtn.className =""
+    houseChoiceBtn.className =""
 }
 
+const changeLayout = ()=>{
+    step1.classList.add("hidden")
+    setTimeout(()=>{
+        step2.classList.remove("hidden")
+        displayWinner()},1000)
 
-const getPlayerAndHouseChoice = (event)=>{
-    if(event.target.id==="paper" ||event.target.id==="scissors" || event.target.id==="rock" ){
-        const choices =["paper","scissors","rock"]
-        const houseChoice = choices[Math.floor(Math.random()*3)]
-        const playerChoice = event.target.id
-        const winner =""
-        checkWinner(houseChoice,playerChoice,winner)
-        main.style.background ="none"
-        main.classList.remove("step1")
-        main.classList.add("step2")
-        main.innerHTML=`
-        <div class="fight-container">
-            <div class=${playerChoice} >
-                    <div class="clickObject"></div>
-                    <div class="img-container">
-                        <img src="./images/icon-${playerChoice}.svg" alt=${playerChoice}>
-                    </div>
-                    <div class ="player-tag">you picked</div>
-            </div>
-            <div class="${houseChoice}" >
-                    <div class="clickObject"></div>
-                    <div class="img-container">
-                        <img src="./images/icon-${houseChoice}.svg" alt=${houseChoice}>
-                    </div>
-                    <div class ="player-tag">the house picked</div>
-            </div>
-        </div>
-        <div>
-        <h2>
-        </div>
-        `
+    playerChoiceBtn.classList.add(playerChoice)
+    playerBtnImg.innerHTML =`
+        <img src="./images/icon-${playerChoice}.svg" alt=${playerChoice}>
+    `
+    houseChoiceBtn.classList.add(houseChoice)
+    houseBtnImg.innerHTML =`
+        <img src="./images/icon-${houseChoice}.svg" alt=${houseChoice}>
+    `
+}
+
+const getHouseChoice = ()=>{
+    const choices =["paper","scissors","rock"]
+    houseChoice = choices[Math.floor(Math.random()*3)]
+}
+
+const checkWinner =()=>{
+    
+    if(playerChoice =="paper" && houseChoice =="rock"){
+        isPlayerWinner = true
+    }else if( playerChoice =="scissors" && houseChoice =="paper"){
+        isPlayerWinner = true
+    }else if( playerChoice =="rock" && houseChoice =="scissors"){
+        isPlayerWinner = true
+    }else if(playerChoice == houseChoice ){
+        isADraw = true
+    }else{
+        isPlayerWinner = false
+    }
+
+    
+}
+
+const displayWinner = ()=>{
+    if(isPlayerWinner){
+        score++
+        winnerDisplay.innerText = "you win"
+        scoreDisplay.innerText = score
+    }else if(isADraw){
+        winnerDisplay.innerText = "draw"
+        
+    }else{
+        winnerDisplay.innerText = "you lose"
     }
 }
 
-window.addEventListener("click", ()=> getPlayerAndHouseChoice(event))
+const showFight = (event)=>{
+    if(event.target.id==="paper" || event.target.id==="scissors" || event.target.id==="rock" ){
+
+        playerChoice = event.target.id
+        getHouseChoice()
+        changeLayout()
+        checkWinner()
+    }
+
+}
+
+const closeRules =()=>{
+    modal.classList.add("hidden")
+}
+
+const openRules = () =>{
+    modal.classList.remove("hidden")
+}
+restartBtn.addEventListener("click", restartGame)
+closeBtn.addEventListener("click", closeRules)
+rulesBtn.addEventListener("click", openRules)
+window.addEventListener("click", ()=> showFight(event))

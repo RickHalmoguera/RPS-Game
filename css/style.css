@@ -4,23 +4,8 @@
   margin: 0;
 }
 
-.clickObject {
-  position: absolute;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.player-tag {
-  margin-top: 2em;
-  text-align: center;
-  color: #FFFFFF;
-  text-transform: uppercase;
-}
-
 body {
+  position: relative;
   margin: 0 auto;
   height: 100svh;
   width: 100%;
@@ -64,9 +49,13 @@ header .score-container span {
   font-weight: 700;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .step1 {
-  align-self: center;
-  justify-self: center;
   background: url(../images/bg-triangle.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -81,14 +70,59 @@ header .score-container span {
 .step2 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  gap: 5em;
+  justify-content: space-around;
 }
 .step2 .fight-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 5em;
+}
+.step2 .fight-container .player-tag {
+  margin-top: 2em;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+}
+.step2 .result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+.step2 .result-container p {
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.step2 .result-container .btn-sec {
+  border: 1px solid transparent;
+  padding: 0.5em 2em;
+  border-radius: 15px;
+  background: #FFFFFF;
+  text-align: center;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: hsl(237, 49%, 15%);
+  letter-spacing: 2px;
+}
+.step2 .result-container .btn-sec:hover {
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.clickObject {
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 .rock {
@@ -168,4 +202,31 @@ footer .rules-btn {
 }
 footer .rules-btn:hover {
   cursor: pointer;
+  color: hsl(237, 49%, 15%);
+  background: hsl(0, 0%, 100%);
+}
+
+.modal {
+  position: absolute;
+  top: 1em;
+  left: 0;
+  height: 90svh;
+  width: 100%;
+  padding: 1em;
+  background: hsl(0, 0%, 100%);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(229, 25%, 31%);
+  font-size: 3rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.not-visible {
+  visibility: hidden;
 }/*# sourceMappingURL=style.css.map */

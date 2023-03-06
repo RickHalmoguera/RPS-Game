@@ -13,39 +13,77 @@
         <img src="./images/logo.svg" alt="logo">
         <div class="score-container">
             <p>SCORE</p>
-            <span class="score-text" id="score">11</span>
+            <span class="score-text" id="score">0</span>
         </div>
     </header>
 
-    <main id="main" class="step1"> 
-        <div class="paper" >
-            <div class="clickObject" id=paper></div>
-            <div class="img-container">
-                <img src="./images/icon-paper.svg" alt="paper">
+    <main id="main" > 
+        <div class="step1" id="step1">
+
+            <div class="paper" >
+                <div class="clickObject" id=paper></div>
+                <div class="img-container">
+                    <img src="./images/icon-paper.svg" alt="paper">
+                </div>
+            </div>
+
+            <div class="scissors" >
+                <div class="clickObject" id="scissors" ></div>
+                <div class="img-container">
+                    <img src="./images/icon-scissors.svg" alt="scissors">
+                </div>
+            </div>
+
+            <div class="rock" >
+                <div class="clickObject" id="rock"></div>
+                <div class="img-container">
+                    <img src="./images/icon-rock.svg" alt="rock">
+                </div>
+            </div>
+
+        </div>
+        <div class="step2 hidden" id="step2">
+            <div class="fight-container">
+                
+                <div id="playerChoice">
+                        <div class="clickObject"></div>
+                        <div class="img-container" id="playerBtnImg">
+                        </div>
+                        <div class ="player-tag">
+                            you picked
+                        </div>
+                </div>
+
+                <div  id="houseChoice" >
+                        <div class="clickObject"></div>
+                        <div class="img-container" id="houseBtnImg"></div>
+                        <div class ="player-tag">
+                            the house picked
+                        </div>
+                </div>
+            </div>
+
+            <div class="result-container">
+                <p id="winnerDisplay"></p>
+                <div class="btn-sec" id="restartBtn">
+                    play again
+                </div>
             </div>
         </div>
 
-        <div class="scissors" >
-            <div class="clickObject" id="scissors" ></div>
-            <div class="img-container">
-                <img src="./images/icon-scissors.svg" alt="scissors">
-            </div>
-        </div>
+</main>
 
-        <div class="rock" >
-            <div class="clickObject" id="rock"></div>
-            <div class="img-container">
-                <img src="./images/icon-rock.svg" alt="rock">
-            </div>
-        </div>
+<footer>
+    <div class="rules-btn" id="rulesBtn">
+        <span>rules</span>
+    </div>
+</footer>
 
-    </main>
-
-    <footer>
-        <div class="rules-btn">
-            <span>rules</span>
-        </div>
-    </footer>
+<div class="modal hidden" id="modal">
+    <h1>RULES</h1>
+    <img src="./images/image-rules.svg" alt="rules">
+    <div class="close-btn" id="closeBtn">X</div>
+</div>
 </body>
 <script src="./index.js"></script>
 </html>
