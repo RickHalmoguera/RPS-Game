@@ -62,9 +62,7 @@ const checkWinner =()=>{
         isADraw = true
     }else{
         isPlayerWinner = false
-    }
-
-    
+    }  
 }
 
 const displayWinner = ()=>{
